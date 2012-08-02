@@ -41,10 +41,17 @@ def promptLoad():
         help()
     elif pc1=='start':
         beginning()
+    elif pc1=='credits' or 'credit':
+        credits()
     else:
         print('')
         print('Command is Invalid')
         promptLoad()
+def promptCredits():
+    cc1=input('').lower()
+    if cc1=='q':
+        start()
+
 def help():
     print(' ------ ')
     print('l Help l')
@@ -78,10 +85,9 @@ def credits():
 	print(' ------------------------------  ')
 	print(' -------------------  ')
 	print('l Type Q to go back l ')
-	print(' -------------------  ')	
-	cc1=input('').lower()
-    if cc == 'q':
-        start()
+	print(' -------------------  ')
+	promptCredits()
+    
 def start():
     print(' -----------------------------------------------')
     print('l  .oooooo.                                     l ')
@@ -99,6 +105,9 @@ def start():
     print(' ---------------------------------  ')
     print('l Type \'Help\' for Some Commands l ')
     print(' --------------------------------- ')
+    print(' ----------------------------------------  ')
+    print('l Type \'Credits\' to See Who Made This! l ')
+    print(' ---------------------------------------- ')
     promptLoad()
 
 #OnLoad#
