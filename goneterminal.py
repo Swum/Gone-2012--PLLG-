@@ -41,8 +41,10 @@ def promptLoad():
         help()
     elif pc1=='start':
         beginning()
-    elif pc1=='credits' or 'credit':
+    elif pc1=='credits' or pc1=='credit':
         credits()
+    elif pc1=='quit':
+        sys.exit('Thanks for playing!')
     else:
         print('')
         print('Command is Invalid')
@@ -51,11 +53,20 @@ def promptCredits():
     cc1=input('').lower()
     if cc1=='q':
         start()
+    else:
+        print('')
+        print('Command is Invalid')
+        promptCredits()
 
 def help():
     print(' ------ ')
     print('l Help l')
     print(' ------ ')
+    print(' ---------- ')
+    print('l Movement l')
+    print(' ---------- ')
+    print(' N - north, S - south, E - east, W - west')
+    print(' Interact <object> - interacts with an object, not all objects can be used.')
     print('')
 
 def beginning():
@@ -105,9 +116,12 @@ def start():
     print(' ---------------------------------  ')
     print('l Type \'Help\' for Some Commands l ')
     print(' --------------------------------- ')
-    print(' ----------------------------------------  ')
-    print('l Type \'Credits\' to See Who Made This! l ')
-    print(' ---------------------------------------- ')
+    print(' ---------------------------------------  ')
+    print('l Type \'Credits\' to See Who Made This l ')
+    print(' --------------------------------------- ')
+    print(' -----------------------  ')
+    print('l Type \'Quit\' to Exit l ')
+    print(' ----------------------- ')
     promptLoad()
 
 #OnLoad#
