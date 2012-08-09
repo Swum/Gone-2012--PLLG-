@@ -137,6 +137,9 @@ def start():
     print(' --------------------------  ')
     print('l Type \'Start\' to Start! l ')
     print(' --------------------------  ')
+    print(' --------------------------- ')
+    print('l Type \'MP\' to start MultiPlayer l ')
+    print(' ---------------------------- ')
     print(' ---------------------------------  ')
     print('l Type \'Help\' for Some Commands l ')
     print(' --------------------------------- ')
@@ -152,16 +155,16 @@ def start():
 #OnLoad#
 print('### WARNING! ###')
 print('This program must be run in cmd (Windows) or Terminal (Mac/Linux)!')
-print('Are you running in the correct console? Yes or No')
-TomMadeMeDoThis=input('').lower()
-if TomMadeMeDoThis=='no' or TomMadeMeDoThis=='n':
-    print('Try again with the correct console.')
+print('Are you running in the console? Yes or No')
+TomMadeMeDoThis=input().lower()
+if TomMadeMeDoThis =='no' or TomMadeMeDoThis=='n':
+    print('Try again using the console.')
     sys.exit()
 elif TomMadeMeDoThis=='yes' or TomMadeMeDoThis=='y':
     print('Sorry for the inconvenience.')
     os.system('cls' if os.name=='nt' else 'clear')
     start()
-elif TomMadeMeDoThis=='sausage':
+elif TomMadeMeDoThis=='sausage' or TomMadeMeDoThis=='Sausage':
     print('Sausage = <3')
     start()
 else:
