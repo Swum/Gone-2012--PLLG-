@@ -84,6 +84,18 @@ def promptLoadSave():
         time.sleep(0.2)
         promptLoadSave()
 
+def promptLoadGame():
+    cc1=input('').lower()
+    if cc1=='q':
+        os.system('cls' if os.name=='nt' else 'clear')
+        start()
+    elif cc1=='start':
+        os.system('cls' if os.name=='nt' else 'clear')
+        cutscene1()
+        promptLoadSave()
+
+
+
 def promptMultiPlayer():
     cc1=input('').lower()
     if cc1=='q':
@@ -229,20 +241,29 @@ def game():
     print('l					        l ')
     print(' ----------------------------------------------- ')	
     print(' ---------------------------------------  ')
-    print('l Pick a slot to save/load by typing 1-3  l ')
+    print('l Type Start to begin your adventure!   l ')
     print(' ---------------------------------------  ')
-    print(' ------------------------------------------------------------ ')
-    print('l Save Slot 1 Empty     l') 
-    print(' ------------------------------------------------------------')
-    print(' ------------------------------------------------------------ ')
-    print('l Save Slot 2 Empty     l') 
-    print(' ------------------------------------------------------------')
-    print(' ------------------------------------------------------------ ')
-    print('l Save Slot 3 Empty     l') 
-    print(' ------------------------------------------------------------')
     print(' --------------------------  ')
     print('l Type \'Q\' to go back    l  ')
     print(' -------------------------- ')
+    print('')
+    promptLoadGame()
+
+
+def cutscene1():
+    print(' -----------------------------------------------')
+    print('       ()___                                    ')
+    print('      ()//__/)_________________()               ')
+    print('      |(___)//#/_/#/_/#/_/#()/||                ')
+    print('      ||----|#| |#|_|#|_|#|_|| ||               ')
+    print('      ||____|_|#|_|#|_|#|_|#||/||               ')
+    print('      ||    |#|_|#|_|#|_|#|_||                  ')
+    print('					                               ')
+    print(' -----------------------------------------------')	
+    print(' ---------------------------------------  ')
+    print(' "What Happened? I dont remember! Oh well, lets ')
+    print(' "    go and see what is happening outside"     ')
+    print(' ---------------------------------------  ')
     print('')
     promptLoadSave()
 
