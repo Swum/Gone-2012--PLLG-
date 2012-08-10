@@ -90,7 +90,7 @@ def help(x):
             start()
         elif x==1:
             print('Aww yeah')
-    
+
 
 def beginning():
     print('In the beginning, there was life...')
@@ -99,13 +99,13 @@ def beginning():
 def credits():
 	print('')
 	print(' -----------------------------------------------')
-	print('l  .oooooo.                                     l ')
-	print('l d8P\'  `Y8b                                    l ')
-	print('l888            .ooooo.  ooo. .oo.    .ooooo.   l ')
-	print('l888           d88\' `88b `888P\"Y88b  d88\' `88b  l ')
-	print('l888     ooooo 888   888  888   888  888ooo888  l ')
-	print('l`88.    .88\'  888   888  888   888  888    .o  l ')
-	print('l `Y8bood8P\'   `Y8bod8P\' o888o o888o `Y8bod8P\'  l ')
+	print('l  .oooooo.                                     l ')
+	print('l d8P\'  `Y8b                                    l ')
+	print('l888            .ooooo.  ooo. .oo.    .ooooo.   l ')
+	print('l888           d88\' `88b `888P\"Y88b  d88\' `88b  l ')
+	print('l888     ooooo 888   888  888   888  888ooo888  l ')
+	print('l`88.    .88\'  888   888  888   888  888    .o  l ')
+	print('l `Y8bood8P\'   `Y8bod8P\' o888o o888o `Y8bod8P\'  l ')
 	print('l					        l ')
 	print(' ----------------------------------------------- ')
 	print(' ----------------------------    ')
@@ -123,16 +123,16 @@ def credits():
 	print('l Type Q to go back l ')
 	print(' -------------------  ')
 	promptCredits()
-    
+
 def start():
     print(' -----------------------------------------------')
-    print('l  .oooooo.                                     l ')
-    print('l d8P\'  `Y8b                                    l ')
-    print('l888            .ooooo.  ooo. .oo.    .ooooo.   l ')
-    print('l888           d88\' `88b `888P\"Y88b  d88\' `88b  l ')
-    print('l888     ooooo 888   888  888   888  888ooo888  l ')
-    print('l`88.    .88\'  888   888  888   888  888    .o  l ')
-    print('l `Y8bood8P\'   `Y8bod8P\' o888o o888o `Y8bod8P\'  l ')
+    print('l  .oooooo.                                     l ')
+    print('l d8P\'  `Y8b                                    l ')
+    print('l888            .ooooo.  ooo. .oo.    .ooooo.   l ')
+    print('l888           d88\' `88b `888P\"Y88b  d88\' `88b  l ')
+    print('l888     ooooo 888   888  888   888  888ooo888  l ')
+    print('l`88.    .88\'  888   888  888   888  888    .o  l ')
+    print('l `Y8bood8P\'   `Y8bod8P\' o888o o888o `Y8bod8P\'  l ')
     print('l					        l ')
     print(' ----------------------------------------------- ')	
     print(' --------------------------  ')
