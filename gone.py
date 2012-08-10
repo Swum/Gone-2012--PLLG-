@@ -84,26 +84,26 @@ def promptLoadSave():
         time.sleep(0.2)
         promptLoadSave()
 
-def promptLoadGame():
-    cc1=input('').lower()
-    if cc1=='q':
-        os.system('cls' if os.name=='nt' else 'clear')
-        start()
-    elif cc1=='start':
-        os.system('cls' if os.name=='nt' else 'clear')
-        cutscene1()
-        promptLoadSave()
+        def promptLoadGame():
+           cc1=input('').lower()
+           if cc1=='q':
+              os.system('cls' if os.name=='nt' else 'clear')
+              start()
+           elif cc1=='start':
+              os.system('cls' if os.name=='nt' else 'clear')
+              cutscene1()
+              promptLoadGame()
 
 
 
 def promptMultiPlayer():
-    cc1=input('').lower()
-    if cc1=='q':
-        os.system('cls' if os.name=='nt' else 'clear')
-        start()
-    elif cc1=='c':
-        os.system('cls' if os.name=='nt' else 'clear')
-        mpbattle()
+    mpip=input('').lower()
+    if mpip=='q':
+       os.system('cls' if os.name=='nt' else 'clear')
+       start()
+    elif mpip=='start':
+       os.system('cls' if os.name=='nt' else 'clear')
+       connectip()
 
 def help(x):
     os.system('cls' if os.name=='nt' else 'clear')
@@ -217,7 +217,7 @@ def mpbattle():
     print('l `Y8bood8P\'   `Y8bod8P\' o888o o888o `Y8bod8P\'  l ')
     print('l					        l ')
     print(' ----------------------------------------------- ')	
-    print('  '+player1+'                         '+player2+'       ')          
+    print('  '+player1+'                    '+player2+'       ')          
     print('     ( )                           ( )           ')
     print('    --|--                         --|--          ') 
     print('     / \                           / \           ')
@@ -268,8 +268,6 @@ def cutscene1():
     promptLoadSave()
 
 def multiplayer():
-    playernumber=15
-    playernumber = str(playernumber)
     print(' -----------------------------------------------')
     print('l  .oooooo.                                     l ')
     print('l d8P\'  `Y8b                                    l ')
@@ -281,16 +279,26 @@ def multiplayer():
     print('l					        l ')
     print(' ----------------------------------------------- ')	
     print(' ---------------------------------------  ')
-    print('l Welcome to the lobby, Press C to battle  l ')
-    print('l a random player on the server, and win!*  l ')
-    print('l *possibly                                   ')
+    print('l Welcome to the lobby, plz type in  l ')
+    print('l your servers ip address to battle  l ')
     print(' ---------------------------------------  ')
-    print(' ---------------------------------------  ')
-    print('l Currently '+playernumber+' people are Online l ')
-    print(' ---------------------------------------  ')
-    print(' --------------------------  ')
-    print('l Type \'Q\' to go back    l  ')
-    print(' -------------------------- ')
+    print('')
+    promptMultiPlayer()
+
+def connectip():
+    print(' -----------------------------------------------')
+    print('l  .oooooo.                                     l ')
+    print('l d8P\'  `Y8b                                    l ')
+    print('l888            .ooooo.  ooo. .oo.    .ooooo.   l ')
+    print('l888           d88\' `88b `888P\"Y88b  d88\' `88b  l ')
+    print('l888     ooooo 888   888  888   888  888ooo888  l ')
+    print('l`88.    .88\'  888   888  888   888  888    .o  l ')
+    print('l `Y8bood8P\'   `Y8bod8P\' o888o o888o `Y8bod8P\'  l ')
+    print('l					        l ')
+    print(' ----------------------------------------------- ')	
+    print('     ---------------------------------------  ')
+    print('l                   Connecting...      ')
+    print('     ---------------------------------------  ')
     print('')
     promptMultiPlayer()
 
