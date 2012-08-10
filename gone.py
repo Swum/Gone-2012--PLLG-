@@ -140,9 +140,9 @@ def start():
     print(' --------------------------  ')
     print('l Type \'Start\' to Start! l ')
     print(' --------------------------  ')
-    print(' --------------------------- ')
-    print('l Type \'MP\' to start MultiPlayer l ')
-    print(' ---------------------------- ')
+    print(' ---------------------------------- ')
+    print('l Type \'MP\' to start Multiplayer l ')
+    print(' ----------------------------------')
     print(' ---------------------------------  ')
     print('l Type \'Help\' for Some Commands l ')
     print(' --------------------------------- ')
@@ -155,7 +155,7 @@ def start():
     print('')
     promptLoad()
 
-def multiplayer:
+def multiplayer():
     print('Coming soon!')
     time.sleep(0.5)
     os.system('cls' if os.name=='nt' else 'clear')
