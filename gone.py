@@ -16,7 +16,8 @@ os.system('cls' if os.name=='nt' else 'clear')
 # check if windows, resizing doesn't work
 check=platform.system()
 if check == 'Windows':
-    print('As automatic resizing is not supported in MS-DOS, please resize your window to 50 x 125. Otherwise, most of the art will not look correct.')
+    print('As automatic resizing is not supported in MS-DOS, please resize your window to 50 x 125. Otherwise, most of the art will not look correct. You can also try ALT+Enter to enter full screen.')
+    time.sleep(2)
 else:
     sys.stdout.write("\x1b[8;{rows};{cols}t".format(rows=50, cols=125))
 # key for variables #
