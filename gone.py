@@ -84,6 +84,20 @@ def promptLoadSave():
         time.sleep(0.2)
         promptLoadSave()
 
+def promptMultiPlayer():
+    cc1=input('').lower()
+    if cc1=='q':
+        os.system('cls' if os.name=='nt' else 'clear')
+        start()
+    elif cc1=='c':
+        os.system('cls' if os.name=='nt' else 'clear')
+        mpbattle()
+        else:
+        print('')
+        print('Command is Invalid')
+        time.sleep(0.2)
+        promptLoadSave()
+
 
 def help(x):
     os.system('cls' if os.name=='nt' else 'clear')
@@ -164,26 +178,9 @@ def start():
     print('l `Y8bood8P\'   `Y8bod8P\' o888o o888o `Y8bod8P\'  l ')
     print('l					        l ')
     print(' ----------------------------------------------- ')	
-    print(' --------------------------  ')
-    print('l Type \'Start\' to Start! l ')
-    print(' --------------------------  ')
-    print(' ---------------------------------- ')
-    print('l Type \'MP\' to start Multiplayer l ')
-    print(' ----------------------------------')
-    print(' ---------------------------------  ')
-    print('l Type \'Help\' for Some Commands l ')
-    print(' --------------------------------- ')
-    print(' ---------------------------------------  ')
-    print('l Type \'Credits\' to See Who Made This l ')
-    print(' --------------------------------------- ')
-    print(' -----------------------  ')
-    print('l Type \'Quit\' to Exit l ')
-    print(' ----------------------- ')
-    print('')
     promptLoad()
 
-def game():
-    players=['player1','player2']
+def mpbattle():
     print(' -----------------------------------------------')
     print('l  .oooooo.                                     l ')
     print('l d8P\'  `Y8b                                    l ')
@@ -214,6 +211,8 @@ def game():
 
 def multiplayer():
     players=['player1','player2']
+    playernumber=15
+    playernumber = str(playernumber)
     print(' -----------------------------------------------')
     print('l  .oooooo.                                     l ')
     print('l d8P\'  `Y8b                                    l ')
@@ -225,13 +224,18 @@ def multiplayer():
     print('l					        l ')
     print(' ----------------------------------------------- ')	
     print(' ---------------------------------------  ')
-    print('l Multiplayer: Coming Soon...  l ')
+    print('l Welcome to the lobby, Press C to battle  l ')
+    print('l a random player on the server, and win!*  l ')
+    print('l *possibly                                   ')
+    print(' ---------------------------------------  ')
+    print(' ---------------------------------------  ')
+    print('l Currently '+playernumber+' people are Online l ')
     print(' ---------------------------------------  ')
     print(' --------------------------  ')
     print('l Type \'Q\' to go back    l  ')
     print(' -------------------------- ')
     print('')
-    promptLoadSave()
+    promptMultiPlayer()
 
 atty = sys.stdout.isatty()
 
@@ -240,6 +244,9 @@ if atty == False:
     time.sleep(1.5)
     sys.exit()    
 else:
+    start()
+    
+def boot():
     print(' -----------------------------------------------')
     print('l  .oooooo.                                     l ')
     print('l d8P\'  `Y8b                                    l ')
@@ -384,4 +391,3 @@ else:
     print('')
     time.sleep(0.5)
     os.system('cls' if os.name=='nt' else 'clear')
-    start()
