@@ -195,20 +195,13 @@ def promptMultiplayer():
         start()
 
 #OnLoad#
-print('### WARNING! ###')
-print('This program must be run in cmd (Windows) or Terminal (Mac/Linux)!')
-print('Are you running in the console? Yes or No')
-TomMadeMeDoThis=input().lower()
-if TomMadeMeDoThis =='no' or TomMadeMeDoThis=='n':
-    print('Try again using the console.')
-    sys.exit()
-elif TomMadeMeDoThis=='yes' or TomMadeMeDoThis=='y':
-    print('Sorry for the inconvenience.')
+atty = sys.stdout.isatty()
+
+if atty == False:
+    print('This program must be run in cmd (Windows) or Terminal (Mac/Linux)!')
+    time.sleep(1.5)
+    sys.exit()    
+else:
+    print('Booting...')
     os.system('cls' if os.name=='nt' else 'clear')
     start()
-elif TomMadeMeDoThis=='sausage' or TomMadeMeDoThis=='Sausage':
-    print('Sausage = <3')
-    start()
-else:
-    #Dafuq are you saying?
-    print('Please enter Yes or No')
