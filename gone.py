@@ -46,6 +46,9 @@ def promptLoad():
     elif pc1=='start':
         os.system('cls' if os.name=='nt' else 'clear')
         beginning()
+    elif pc1=='back':
+        os.system('cls' if os.name=='nt' else 'clear')
+        start()
     elif pc1=='credits' or pc1=='credit':
         os.system('cls' if os.name=='nt' else 'clear')
         credits()
@@ -209,4 +212,3 @@ elif TomMadeMeDoThis=='sausage' or TomMadeMeDoThis=='Sausage':
 else:
     #Dafuq are you saying?
     print('Please enter Yes or No')
-
