@@ -64,7 +64,7 @@ def promptLoad():
         promptLoad()
 def promptCredits():
     cc1=input('').lower()
-    if cc1=='quit':
+    if cc1=='q':
         os.system('cls' if os.name=='nt' else 'clear')
         start()
     else:
@@ -72,6 +72,7 @@ def promptCredits():
         print('Command is Invalid')
         time.sleep(0.2)
         promptCredits()
+
 def help(x):
     os.system('cls' if os.name=='nt' else 'clear')
     print(' ------ ')
@@ -100,8 +101,6 @@ def help(x):
 def beginning():
     print('In the beginning, there was life...')
     time.sleep(1)
-    os.system('cls' if os.name=='nt' else 'clear')
-    game()
 
 def credits():
 	print('')
@@ -127,7 +126,7 @@ def credits():
 	print('l Jonathan  (StoryWriter,Coder) l ')
 	print(' ------------------------------  ')
 	print(' -------------------  ')
-	print('l Type \'Quit\' to go back l ')
+	print('l Type Q to go back l ')
 	print(' -------------------  ')
 	promptCredits()
 
@@ -160,7 +159,7 @@ def start():
     print('')
     promptLoad()
 
-def game():
+def multiplayer():
     players=['player1','player2']
     print(' -----------------------------------------------')
     print('l  .oooooo.                                     l ')
@@ -173,22 +172,16 @@ def game():
     print('l					        l ')
     print(' ----------------------------------------------- ')	
     print(' ---------------------------------------  ')
-    print('l Pick a slot to save/load by typing 1-3  l ')
+    print('l Type \'Play\' to challenge someone!   l ')
     print(' ---------------------------------------  ')
     print(' ------------------------------------------------------------ ')
-    print('l Save Slot 1 Empty     l') 
-    print(' ------------------------------------------------------------')
-    print(' ------------------------------------------------------------ ')
-    print('l Save Slot 2 Empty     l') 
-    print(' ------------------------------------------------------------')
-    print(' ------------------------------------------------------------ ')
-    print('l Save Slot 3 Empty     l') 
+    print('l Currently the players online are: ' + str(players) + '     l') 
     print(' ------------------------------------------------------------')
     print(' --------------------------  ')
     print('l Type \'Q\' to go back    l  ')
     print(' -------------------------- ')
     print('')
-    promptLoad()
+    promptMultiplayer()
 
 def promptMultiplayer():
     pc3=input().lower()
@@ -201,6 +194,7 @@ def promptMultiplayer():
         os.system('cls' if os.name=='nt' else 'clear')
         start()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 #OnLoad#
 =======
@@ -363,3 +357,23 @@ else:
         os.system('cls' if os.name=='nt' else 'clear')
         start()
 >>>>>>> Big Update #1
+=======
+#OnLoad#
+print('### WARNING! ###')
+print('This program must be run in cmd (Windows) or Terminal (Mac/Linux)!')
+print('Are you running in the console? Yes or No')
+TomMadeMeDoThis=input().lower()
+if TomMadeMeDoThis =='no' or TomMadeMeDoThis=='n':
+    print('Try again using the console.')
+    sys.exit()
+elif TomMadeMeDoThis=='yes' or TomMadeMeDoThis=='y':
+    print('Sorry for the inconvenience.')
+    os.system('cls' if os.name=='nt' else 'clear')
+    start()
+elif TomMadeMeDoThis=='sausage' or TomMadeMeDoThis=='Sausage':
+    print('Sausage = <3')
+    start()
+else:
+    #Dafuq are you saying?
+    print('Please enter Yes or No')
+>>>>>>> Revert "Big Update #1"
