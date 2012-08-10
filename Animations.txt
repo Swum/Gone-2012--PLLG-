@@ -1,6 +1,11 @@
-<<<<<<< HEAD
-Put a list of all needed Animations here
-=======
-cd /Users/jacobgoldman/Documents/Gone-2012--PLLG-/
-python3 gone.py
->>>>>>> ReCommitted Andy's Changes
+Needed Location Art:
+1. Room where you wake up
+2. Outside (maybe a damaged Street or something)
+3. A abandoned shop
+4. A cinema
+5. A abandoned Trainstation
+6. A half damaged house
+
+Needed Animations:
+-(For Flashbacks)
+
