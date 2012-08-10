@@ -8,10 +8,15 @@
 import time
 import sys
 import os
+import platform
 
 # cleanup and set size of window
 os.system('cls' if os.name=='nt' else 'clear')
-sys.stdout.write("\x1b[8;{rows};{cols}t".format(rows=50, cols=125))
+
+# check if windows, resizing doesn't work
+check=platform.system()
+if check == 'Windows':
+    sys.stdout.write("\x1b[8;{rows};{cols}t".format(rows=50, cols=125))
 # key for variables #
 #   pc1 : Pre-Choice 1, l:38
 #   pc2 : Pre-Choice 2
@@ -51,7 +56,7 @@ def promptLoad():
         credits()
     elif pc1=='quit':
         sys.exit('Thanks for playing!')
-    elif pc1=='mp' or 'multiplayer':
+    elif pc1=='mp' or pc1=='multiplayer':
         multiplayer()
     else:
         print('')
