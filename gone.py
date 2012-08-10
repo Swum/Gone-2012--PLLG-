@@ -51,6 +51,8 @@ def promptLoad():
         credits()
     elif pc1=='quit':
         sys.exit('Thanks for playing!')
+    elif pc1=='mp' or 'multiplayer':
+        multiplayer()
     else:
         print('')
         print('Command is Invalid')
@@ -152,6 +154,13 @@ def start():
     print(' ----------------------- ')
     print('')
     promptLoad()
+
+def multiplayer:
+    print('Coming soon!')
+    time.sleep(0.5)
+    os.system('cls' if os.name=='nt' else 'clear')
+    start()
+    
 
 #OnLoad#
 print('### WARNING! ###')
