@@ -72,6 +72,19 @@ def promptCredits():
         print('Command is Invalid')
         time.sleep(0.2)
         promptCredits()
+
+def promptLoadSave():
+    cc1=input('').lower()
+    if cc1=='q':
+        os.system('cls' if os.name=='nt' else 'clear')
+        start()
+    else:
+        print('')
+        print('Command is Invalid')
+        time.sleep(0.2)
+        promptLoadSave()
+
+
 def help(x):
     os.system('cls' if os.name=='nt' else 'clear')
     print(' ------ ')
@@ -99,7 +112,16 @@ def help(x):
 
 def beginning():
     print('In the beginning, there was life...')
-    time.sleep(1)
+    print('Loading.')
+    time.sleep(0.5)
+    os.system('cls' if os.name=='nt' else 'clear')
+    print('In the beginning, there was life...')
+    print('Loading..')
+    time.sleep(0.5)
+    os.system('cls' if os.name=='nt' else 'clear')
+    print('In the beginning, there was life...')
+    print('Loading...')
+    time.sleep(0.5)
     os.system('cls' if os.name=='nt' else 'clear')
     game()
 
@@ -188,18 +210,28 @@ def game():
     print('l Type \'Q\' to go back    l  ')
     print(' -------------------------- ')
     print('')
-    promptLoad()
+    promptLoadSave()
 
-def promptMultiplayer():
-    pc3=input().lower()
-    if pc3=='q':
-        os.system('cls' if os.name=='nt' else 'clear')
-        start()
-    if pc3=='play':
-        print('Comming soon!')
-        time.sleep(1)
-        os.system('cls' if os.name=='nt' else 'clear')
-        start()
+def multiplayer():
+    players=['player1','player2']
+    print(' -----------------------------------------------')
+    print('l  .oooooo.                                     l ')
+    print('l d8P\'  `Y8b                                    l ')
+    print('l888            .ooooo.  ooo. .oo.    .ooooo.   l ')
+    print('l888           d88\' `88b `888P\"Y88b  d88\' `88b  l ')
+    print('l888     ooooo 888   888  888   888  888ooo888  l ')
+    print('l`88.    .88\'  888   888  888   888  888    .o  l ')
+    print('l `Y8bood8P\'   `Y8bod8P\' o888o o888o `Y8bod8P\'  l ')
+    print('l					        l ')
+    print(' ----------------------------------------------- ')	
+    print(' ---------------------------------------  ')
+    print('l Multiplayer: Coming Soon...  l ')
+    print(' ---------------------------------------  ')
+    print(' --------------------------  ')
+    print('l Type \'Q\' to go back    l  ')
+    print(' -------------------------- ')
+    print('')
+    promptLoadSave()
 
 atty = sys.stdout.isatty()
 
