@@ -51,11 +51,7 @@ def promptLoad():
         credits()
     elif pc1=='quit':
         sys.exit('Thanks for playing!')
-<<<<<<< HEAD
-    elif pc1=='mp' or 'multiplayer':
-=======
     elif pc1=='mp' or pc1=='multiplayer':
->>>>>>> Multiplayer menu in.
         os.system('cls' if os.name=='nt' else 'clear')
         multiplayer()
     else:
@@ -131,34 +127,6 @@ def credits():
 	print(' -------------------  ')
 	promptCredits()
 
-def multiplayer():
-    players=['player1','player2']
-    print(' -----------------------------------------------')
-    print('l  .oooooo.                                     l ')
-    print('l d8P\'  `Y8b                                    l ')
-    print('l888            .ooooo.  ooo. .oo.    .ooooo.   l ')
-    print('l888           d88\' `88b `888P\"Y88b  d88\' `88b  l ')
-    print('l888     ooooo 888   888  888   888  888ooo888  l ')
-    print('l`88.    .88\'  888   888  888   888  888    .o  l ')
-    print('l `Y8bood8P\'   `Y8bod8P\' o888o o888o `Y8bod8P\'  l ')
-    print('l					        l ')
-    print(' ----------------------------------------------- ')	
-    print('         --------------------------  ')
-    print('      Type \'PlayMp\' to challenge someone!  ')
-    print('         --------------------------  ')
-    print('      ---------------------------------- ')
-    print('       Currently the players online are:  ')
-    print('      ----------------------------------')
-    print('      ---------------------------------- ')
-    print('       Currently the players online are:  ')
-    print(players)
-    print('      ----------------------------------')
-    print('          -----------------------  ')
-    print('          Type \'Back\' to go back  ')
-    print('          ----------------------- ')
-    print('')
-    promptLoad()
-
 def start():
     print(' -----------------------------------------------')
     print('l  .oooooo.                                     l ')
@@ -187,8 +155,6 @@ def start():
     print(' ----------------------- ')
     print('')
     promptLoad()
-<<<<<<< HEAD
-=======
 
 def multiplayer():
     players=['player1','player2']
@@ -225,7 +191,6 @@ def promptMultiplayer():
         os.system('cls' if os.name=='nt' else 'clear')
         start()
 
->>>>>>> Multiplayer menu in.
 #OnLoad#
 print('### WARNING! ###')
 print('This program must be run in cmd (Windows) or Terminal (Mac/Linux)!')
