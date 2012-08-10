@@ -92,12 +92,6 @@ def promptMultiPlayer():
     elif cc1=='c':
         os.system('cls' if os.name=='nt' else 'clear')
         mpbattle()
-        else:
-        print('')
-        print('Command is Invalid')
-        time.sleep(0.2)
-        promptLoadSave()
-
 
 def help(x):
     os.system('cls' if os.name=='nt' else 'clear')
@@ -178,9 +172,48 @@ def start():
     print('l `Y8bood8P\'   `Y8bod8P\' o888o o888o `Y8bod8P\'  l ')
     print('l					        l ')
     print(' ----------------------------------------------- ')	
+    print(' --------------------------  ')
+    print('l Type \'Start\' to Start! l ')
+    print(' --------------------------  ')
+    print(' ---------------------------------- ')
+    print('l Type \'MP\' to start Multiplayer l ')
+    print(' ----------------------------------')
+    print(' ---------------------------------  ')
+    print('l Type \'Help\' for Some Commands l ')
+    print(' --------------------------------- ')
+    print(' ---------------------------------------  ')
+    print('l Type \'Credits\' to See Who Made This l ')
+    print(' --------------------------------------- ')
+    print(' -----------------------  ')
+    print('l Type \'Quit\' to Exit l ')
+    print(' ----------------------- ')
+    print('')
     promptLoad()
 
 def mpbattle():
+    players=['player1','player2']
+
+    print(' -----------------------------------------------')
+    print('l  .oooooo.                                     l ')
+    print('l d8P\'  `Y8b                                    l ')
+    print('l888            .ooooo.  ooo. .oo.    .ooooo.   l ')
+    print('l888           d88\' `88b `888P\"Y88b  d88\' `88b  l ')
+    print('l888     ooooo 888   888  888   888  888ooo888  l ')
+    print('l`88.    .88\'  888   888  888   888  888    .o  l ')
+    print('l `Y8bood8P\'   `Y8bod8P\' o888o o888o `Y8bod8P\'  l ')
+    print('l					        l ')
+    print(' ----------------------------------------------- ')	
+    print('  '+player1+'                  '+player2+'       ')          
+    print('     ( )                           ( )           ')
+    print('    --|--                         --|--          ') 
+    print('     / \                           / \           ')
+    print(' ----------------------------------------------- ')
+    print('Punch with P Kick with K Stab with S Throw with T')
+    print('      HP: --------------------------             ')
+    print(' ----------------------------------------------- ')
+    promptLoad()
+               
+def game():
     print(' -----------------------------------------------')
     print('l  .oooooo.                                     l ')
     print('l d8P\'  `Y8b                                    l ')
@@ -210,7 +243,6 @@ def mpbattle():
     promptLoadSave()
 
 def multiplayer():
-    players=['player1','player2']
     playernumber=15
     playernumber = str(playernumber)
     print(' -----------------------------------------------')
