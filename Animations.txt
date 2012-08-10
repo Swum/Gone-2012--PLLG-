@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 Put a list of all needed Animations here
-
+=======
+cd /Users/jacobgoldman/Documents/Gone-2012--PLLG-/
+python3 gone.py
+>>>>>>> ReCommitted Andy's Changes

@@ -8,18 +8,10 @@
 import time
 import sys
 import os
-import platform
 
 # cleanup and set size of window
 os.system('cls' if os.name=='nt' else 'clear')
-
-# check if windows, resizing doesn't work
-check=platform.system()
-if check == 'Windows':
-    print('As automatic resizing is not supported in MS-DOS, please resize your window to 50 x 125. Otherwise, most of the art will not look correct. You can also try ALT+Enter to enter full screen.')
-    time.sleep(2)
-else:
-    sys.stdout.write("\x1b[8;{rows};{cols}t".format(rows=50, cols=125))
+sys.stdout.write("\x1b[8;{rows};{cols}t".format(rows=50, cols=125))
 # key for variables #
 #   pc1 : Pre-Choice 1, l:38
 #   pc2 : Pre-Choice 2
@@ -59,7 +51,8 @@ def promptLoad():
         credits()
     elif pc1=='quit':
         sys.exit('Thanks for playing!')
-    elif pc1=='mp' or pc1=='multiplayer':
+    elif pc1=='mp' or 'multiplayer':
+        os.system('cls' if os.name=='nt' else 'clear')
         multiplayer()
     else:
         print('')
@@ -134,6 +127,34 @@ def credits():
 	print(' -------------------  ')
 	promptCredits()
 
+def multiplayer():
+    players=['player1','player2']
+    print(' -----------------------------------------------')
+    print('l  .oooooo.                                     l ')
+    print('l d8P\'  `Y8b                                    l ')
+    print('l888            .ooooo.  ooo. .oo.    .ooooo.   l ')
+    print('l888           d88\' `88b `888P\"Y88b  d88\' `88b  l ')
+    print('l888     ooooo 888   888  888   888  888ooo888  l ')
+    print('l`88.    .88\'  888   888  888   888  888    .o  l ')
+    print('l `Y8bood8P\'   `Y8bod8P\' o888o o888o `Y8bod8P\'  l ')
+    print('l					        l ')
+    print(' ----------------------------------------------- ')	
+    print('         --------------------------  ')
+    print('      Type \'PlayMp\' to challenge someone!  ')
+    print('         --------------------------  ')
+    print('      ---------------------------------- ')
+    print('       Currently the players online are:  ')
+    print('      ----------------------------------')
+    print('      ---------------------------------- ')
+    print('       Currently the players online are:  ')
+    print(players)
+    print('      ----------------------------------')
+    print('          -----------------------  ')
+    print('          Type \'Back\' to go back  ')
+    print('          ----------------------- ')
+    print('')
+    promptLoad()
+
 def start():
     print(' -----------------------------------------------')
     print('l  .oooooo.                                     l ')
@@ -162,14 +183,6 @@ def start():
     print(' ----------------------- ')
     print('')
     promptLoad()
-
-def multiplayer():
-    print('Coming soon!')
-    time.sleep(0.5)
-    os.system('cls' if os.name=='nt' else 'clear')
-    start()
-    
-
 #OnLoad#
 print('### WARNING! ###')
 print('This program must be run in cmd (Windows) or Terminal (Mac/Linux)!')
