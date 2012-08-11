@@ -8,6 +8,7 @@
 import time
 import sys
 import os
+import socket
 
 # cleanup and set size of window
 os.system('cls' if os.name=='nt' else 'clear')
@@ -93,17 +94,6 @@ def promptLoadSave():
               os.system('cls' if os.name=='nt' else 'clear')
               cutscene1()
               promptLoadGame()
-
-
-
-def promptMultiPlayer():
-    mpip=input('').lower()
-    if mpip=='q':
-       os.system('cls' if os.name=='nt' else 'clear')
-       start()
-    elif mpip=='start':
-       os.system('cls' if os.name=='nt' else 'clear')
-       connectip()
 
 def help(x):
     os.system('cls' if os.name=='nt' else 'clear')
@@ -283,9 +273,15 @@ def multiplayer():
     print('l your servers ip address to battle  l ')
     print(' ---------------------------------------  ')
     print('')
-    promptMultiPlayer()
-
-def connectip():
+    mpip = input('').lower()
+    if mpip=='q':
+        os.system('cls' if os.name=='nt' else 'clear')
+        start()
+    else:
+        os.system('cls' if os.name=='nt' else 'clear')
+    clientsock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    clientsock.connect((mpip,20000))
+    clientsock.recv([1024])
     print(' -----------------------------------------------')
     print('l  .oooooo.                                     l ')
     print('l d8P\'  `Y8b                                    l ')
@@ -300,7 +296,6 @@ def connectip():
     print('l                   Connecting...      ')
     print('     ---------------------------------------  ')
     print('')
-    promptMultiPlayer()
 
 atty = sys.stdout.isatty()
 
