@@ -57,7 +57,7 @@ def promptLoad():
         sys.exit('Thanks for playing!')
     elif pc1=='mp' or pc1=='multiplayer':
         os.system('cls' if os.name=='nt' else 'clear')
-        multiplayer()
+        mpbattle()
     else:
         print('')
         print('Command is Invalid')
@@ -197,6 +197,7 @@ def mpbattle():
     player1 = str(player1)
     player2='Swum'
     player2 = str(player2)
+    health='95'
     print(' -----------------------------------------------')
     print('l  .oooooo.                                     l ')
     print('l d8P\'  `Y8b                                    l ')
@@ -213,11 +214,14 @@ def mpbattle():
     print('     / \                           / \           ')
     print(' ----------------------------------------------- ')
     print('Punch with P Kick with K Stab with S Throw with T')
-    print('      HP: --------------------------             ')
+    print('                    HP:'+health+'                ')
     print(' ----------------------------------------------- ')
     print('          Press Q to quit the Game               ')
     print(' ----------------------------------------------- ')
-    promptLoad()
+    pc1 = input('').lower()
+    if pc1=='q':
+       os.system('cls' if os.name=='nt' else 'clear')
+       start()
                
 def game():
     print(' -----------------------------------------------')
