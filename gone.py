@@ -8,6 +8,7 @@
 import time
 import sys
 import os
+import socket
 
 # cleanup and set size of window
 os.system('cls' if os.name=='nt' else 'clear')
@@ -56,7 +57,7 @@ def promptLoad():
         sys.exit('Thanks for playing!')
     elif pc1=='mp' or pc1=='multiplayer':
         os.system('cls' if os.name=='nt' else 'clear')
-        multiplayer()
+        mpbattle()
     else:
         print('')
         print('Command is Invalid')
@@ -84,14 +85,15 @@ def promptLoadSave():
         time.sleep(0.2)
         promptLoadSave()
 
-def promptMultiPlayer():
-    cc1=input('').lower()
-    if cc1=='q':
-        os.system('cls' if os.name=='nt' else 'clear')
-        start()
-    elif cc1=='c':
-        os.system('cls' if os.name=='nt' else 'clear')
-        mpbattle()
+        def promptLoadGame():
+           cc1=input('').lower()
+           if cc1=='q':
+              os.system('cls' if os.name=='nt' else 'clear')
+              start()
+           elif cc1=='start':
+              os.system('cls' if os.name=='nt' else 'clear')
+              cutscene1()
+              promptLoadGame()
 
 def help(x):
     os.system('cls' if os.name=='nt' else 'clear')
@@ -195,6 +197,7 @@ def mpbattle():
     player1 = str(player1)
     player2='Swum'
     player2 = str(player2)
+    health='95'
     print(' -----------------------------------------------')
     print('l  .oooooo.                                     l ')
     print('l d8P\'  `Y8b                                    l ')
@@ -205,17 +208,20 @@ def mpbattle():
     print('l `Y8bood8P\'   `Y8bod8P\' o888o o888o `Y8bod8P\'  l ')
     print('l					        l ')
     print(' ----------------------------------------------- ')	
-    print('  '+player1+'                         '+player2+'       ')          
+    print('  '+player1+'                    '+player2+'       ')          
     print('     ( )                           ( )           ')
     print('    --|--                         --|--          ') 
     print('     / \                           / \           ')
     print(' ----------------------------------------------- ')
     print('Punch with P Kick with K Stab with S Throw with T')
-    print('      HP: --------------------------             ')
+    print('                    HP:'+health+'                ')
     print(' ----------------------------------------------- ')
     print('          Press Q to quit the Game               ')
     print(' ----------------------------------------------- ')
-    promptLoad()
+    pc1 = input('').lower()
+    if pc1=='q':
+       os.system('cls' if os.name=='nt' else 'clear')
+       start()
                
 def game():
     print(' -----------------------------------------------')
@@ -229,26 +235,33 @@ def game():
     print('l					        l ')
     print(' ----------------------------------------------- ')	
     print(' ---------------------------------------  ')
-    print('l Pick a slot to save/load by typing 1-3  l ')
+    print('l Type Start to begin your adventure!   l ')
     print(' ---------------------------------------  ')
-    print(' ------------------------------------------------------------ ')
-    print('l Save Slot 1 Empty     l') 
-    print(' ------------------------------------------------------------')
-    print(' ------------------------------------------------------------ ')
-    print('l Save Slot 2 Empty     l') 
-    print(' ------------------------------------------------------------')
-    print(' ------------------------------------------------------------ ')
-    print('l Save Slot 3 Empty     l') 
-    print(' ------------------------------------------------------------')
     print(' --------------------------  ')
     print('l Type \'Q\' to go back    l  ')
     print(' -------------------------- ')
     print('')
+    promptLoadGame()
+
+
+def cutscene1():
+    print(' -----------------------------------------------')
+    print('       ()___                                    ')
+    print('      ()//__/)_________________()               ')
+    print('      |(___)//#/_/#/_/#/_/#()/||                ')
+    print('      ||----|#| |#|_|#|_|#|_|| ||               ')
+    print('      ||____|_|#|_|#|_|#|_|#||/||               ')
+    print('      ||    |#|_|#|_|#|_|#|_||                  ')
+    print('					                               ')
+    print(' -----------------------------------------------')	
+    print(' ---------------------------------------  ')
+    print(' "What Happened? I dont remember! Oh well, lets ')
+    print(' "    go and see what is happening outside"     ')
+    print(' ---------------------------------------  ')
+    print('')
     promptLoadSave()
 
 def multiplayer():
-    playernumber=15
-    playernumber = str(playernumber)
     print(' -----------------------------------------------')
     print('l  .oooooo.                                     l ')
     print('l d8P\'  `Y8b                                    l ')
@@ -260,18 +273,33 @@ def multiplayer():
     print('l					        l ')
     print(' ----------------------------------------------- ')	
     print(' ---------------------------------------  ')
-    print('l Welcome to the lobby, Press C to battle  l ')
-    print('l a random player on the server, and win!*  l ')
-    print('l *possibly                                   ')
+    print('l Welcome to the lobby, plz type in  l ')
+    print('l your servers ip address to battle  l ')
     print(' ---------------------------------------  ')
-    print(' ---------------------------------------  ')
-    print('l Currently '+playernumber+' people are Online l ')
-    print(' ---------------------------------------  ')
-    print(' --------------------------  ')
-    print('l Type \'Q\' to go back    l  ')
-    print(' -------------------------- ')
     print('')
-    promptMultiPlayer()
+    mpip = input('').lower()
+    if mpip=='q':
+        os.system('cls' if os.name=='nt' else 'clear')
+        start()
+    else:
+        os.system('cls' if os.name=='nt' else 'clear')
+    clientsock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    clientsock.connect((mpip,20000))
+    clientsock.recv([1024])
+    print(' -----------------------------------------------')
+    print('l  .oooooo.                                     l ')
+    print('l d8P\'  `Y8b                                    l ')
+    print('l888            .ooooo.  ooo. .oo.    .ooooo.   l ')
+    print('l888           d88\' `88b `888P\"Y88b  d88\' `88b  l ')
+    print('l888     ooooo 888   888  888   888  888ooo888  l ')
+    print('l`88.    .88\'  888   888  888   888  888    .o  l ')
+    print('l `Y8bood8P\'   `Y8bod8P\' o888o o888o `Y8bod8P\'  l ')
+    print('l					        l ')
+    print(' ----------------------------------------------- ')	
+    print('     ---------------------------------------  ')
+    print('l                   Connecting...      ')
+    print('     ---------------------------------------  ')
+    print('')
 
 atty = sys.stdout.isatty()
 
