@@ -85,15 +85,15 @@ def promptLoadSave():
         time.sleep(0.2)
         promptLoadSave()
 
-        def promptLoadGame():
-           cc1=input('').lower()
-           if cc1=='q':
-              os.system('cls' if os.name=='nt' else 'clear')
-              start()
-           elif cc1=='start':
-              os.system('cls' if os.name=='nt' else 'clear')
-              cutscene1()
-              promptLoadGame()
+def promptLoadGame():
+    cc1=input('').lower()
+    if cc1=='q':
+        os.system('cls' if os.name=='nt' else 'clear')
+        start()
+    elif cc1=='start':
+        os.system('cls' if os.name=='nt' else 'clear')
+        cutscene1()
+        promptLoadGame()
 
 def help(x):
     os.system('cls' if os.name=='nt' else 'clear')
@@ -207,19 +207,29 @@ def mpbattle():
     print('l`88.    .88\'  888   888  888   888  888    .o  l ')
     print('l `Y8bood8P\'   `Y8bod8P\' o888o o888o `Y8bod8P\'  l ')
     print('l					        l ')
-    print(' ----------------------------------------------- ')	
-    print('  '+player1+'                    '+player2+'       ')          
+    print(' ----------------------------------------------- ')	        
     print('     ( )                           ( )           ')
     print('    --|--                         --|--          ') 
     print('     / \                           / \           ')
     print(' ----------------------------------------------- ')
-    print('Punch with P Kick with K Stab with S Throw with T')
+    print('        Punch with P Kick with K Stab with S     ')
+    print('       Once you have hit 3 times, you can use    ')
+    print('                 a melee attack once             ')
+    print(' ----------------------------------------------- ')
     print('                    HP:'+health+'                ')
+    print(' ----------------------------------------------- ')
+    print('  Player 1 name: '+player1+' Player 2 name: '+player2+'  ')
     print(' ----------------------------------------------- ')
     print('          Press Q to quit the Game               ')
     print(' ----------------------------------------------- ')
     pc1 = input('').lower()
     if pc1=='q':
+       os.system('cls' if os.name=='nt' else 'clear')
+       start()
+    elif pc1=='p':
+       os.system('cls' if os.name=='nt' else 'clear')
+       start()
+    elif pc1=='p':
        os.system('cls' if os.name=='nt' else 'clear')
        start()
                
@@ -259,7 +269,47 @@ def cutscene1():
     print(' "    go and see what is happening outside"     ')
     print(' ---------------------------------------  ')
     print('')
-    promptLoadSave()
+    time.sleep(1)
+
+def scene1():
+    cc1=input('').lower()
+    print(' -----------------------------------------------')
+    print('       ()___                                    ')
+    print('      ()//__/)_________________()               ')
+    print('      |(___)//#/_/#/_/#/_/#()/||                ')
+    print('      ||----|#| |#|_|#|_|#|_|| ||               ')
+    print('      ||____|_|#|_|#|_|#|_|#||/||               ')
+    print('      ||    |#|_|#|_|#|_|#|_||                  ')
+    print('					                               ')
+    print(' -----------------------------------------------')	
+    print(' ---------------------------------------  ')
+    print(' You are in a room, there are 2 doors, a locked ')
+    print(' one, and an open one, there is some food and a ')
+    print('              knife to attack with              ')
+    print('            Type B to pick up the knife         ')
+    print(' ---------------------------------------  ')
+    print('')
+    if cc1=='b':
+        os.system('cls' if os.name=='nt' else 'clear')
+    print(' -----------------------------------------------')
+    print('       ()___                                    ')
+    print('      ()//__/)_________________()               ')
+    print('      |(___)//#/_/#/_/#/_/#()/||                ')
+    print('      ||----|#| |#|_|#|_|#|_|| ||               ')
+    print('      ||____|_|#|_|#|_|#|_|#||/||               ')
+    print('      ||    |#|_|#|_|#|_|#|_||                  ')
+    print('					                               ')
+    print(' -----------------------------------------------')	
+    print(' ---------------------------------------  ')
+    print(' You are in a room, there are 2 doors, a locked ')
+    print('              one, and an open one              ')
+    print('              Type A to open the door')
+    print(' ---------------------------------------        ')
+    print('')
+     elif cc1=='a':
+     os.system('cls' if os.name=='nt' else 'clear')
+     cutscene2()
+    
 
 def multiplayer():
     print(' -----------------------------------------------')
